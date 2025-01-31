@@ -7,11 +7,10 @@ import { FaArrowRight } from "react-icons/fa6";
 
 function Header() {
   return (
-    <>
-      <div className="flex flex-col justify-center items-center w-full h-screen mb-[-8rem]">
-        <div className="mt-[-10rem] flex flex-col items-center justify-center">
-          <Image src={assets.movie} alt="" className="w-60 h-60" />
-          <h1 className="text-4xl text-black text-semibold mt-2 p-2 mb-2">
+      <div className="flex flex-col justify-center items-center w-full bg-slate-200 dark:bg-slate-800">
+        <div className=" flex flex-col items-center justify-center mt-10">
+          <Image src={assets.movie} alt="" className="w-60" />
+          <h1 className="text-4xl text-black text-semibold mt-2 p-2 mb-2 dark:text-white">
             <strong>Movie App.com</strong>
           </h1>
         </div>
@@ -20,8 +19,8 @@ function Header() {
           <input
             id="first-input"
             type="text"
-            className="w-[750px] rounded-md focus:outline-none
- border border-gray-500 py-[10] px-4 focus:placeholder-hidden"
+            className="md:w-[750px] rounded-md focus:outline-none 
+ border border-gray-500 py-[10] px-4 focus:placeholder-hidden "
             placeholder="Enter Keywords..."
           />
           <button className="w-15 h-15 px-4 py-[15] rounded-md bg-slate-500">
@@ -29,12 +28,12 @@ function Header() {
           </button>
         </div>
 
-        <button className="flex flex-row items-center gap-4 border  text-2xl border-gray-500 px-10 py-3 mt-5 rounded-full hover:scale-105 transition duration-300 hover:bg-lightHover">
+        <button className="flex flex-row items-center gap-4 border  text-2xl border-gray-500 px-10 py-3 mt-5 rounded-full hover:scale-105 transition duration-300 hover:bg-lightHover dark:text-white dark:hover:text-black">
           Visit full site <FaArrowRight />
         </button>
-      </div>
 
-      <div className="flex mx-14  flex-col">
+
+        <div className="flex mx-14 mt-10 flex-col dark:text-white">
         <div className="mb-10">
           <h3 className="mb-2 font-Outfit font-semibold">
             Watch Movies Online Free
@@ -128,7 +127,9 @@ function Header() {
           </p>
         </div>
       </div>
-    </>
+
+
+      </div>
   );
 }
 
