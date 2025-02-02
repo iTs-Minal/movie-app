@@ -3,6 +3,7 @@ import React from "react";
 import { assets } from "../../../assets/assets";
 import { FaSearch } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
+import Link from "next/link";
 // import {motion} from "framer-motion"
 
 function Header() {
@@ -28,9 +29,11 @@ function Header() {
           </button>
         </div>
 
-        <button className="flex flex-row items-center gap-4 border  text-2xl border-gray-500 px-10 py-3 mt-5 rounded-full hover:scale-105 transition duration-300 hover:bg-lightHover dark:text-white dark:hover:text-black">
+          <Link href="/Main">
+          <button className="flex flex-row items-center gap-4 border  text-2xl border-gray-500 px-10 py-3 mt-5 rounded-full hover:scale-105 transition duration-300 hover:bg-lightHover dark:text-white dark:hover:text-black">
           Visit full site <FaArrowRight />
         </button>
+        </Link>
 
 
         <div className="flex mx-14 mt-10 flex-col dark:text-white">

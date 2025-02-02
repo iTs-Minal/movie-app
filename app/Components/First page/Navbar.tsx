@@ -3,6 +3,7 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React, { useContext, useRef } from "react";
 import { DarkModeContext } from "../../themeToggle";
+import Link from "next/link";
 
 function Navbar() {
   const darkModeContext = useContext(DarkModeContext);
@@ -34,9 +35,11 @@ function Navbar() {
 
       <div className="flex justify-center items-center">
         <ul className="hidden justify-around  md:flex  px-3 py-4 gap-7 mr-10 ">
-          <li className="px-3 py-2 cursor-pointer hover:text-gray-700 dark:hover:text-yellow-300">
-            Home
-          </li>
+          <Link href="/Main">
+            <li className="px-3 py-2 cursor-pointer hover:text-gray-700 dark:hover:text-yellow-300">
+              Home
+            </li>
+          </Link>
           <li className="px-3 py-2 cursor-pointer hover:text-gray-700 dark:hover:text-yellow-300">
             Movies
           </li>
@@ -46,21 +49,23 @@ function Navbar() {
           <li className="px-3 py-2 cursor-pointer hover:text-gray-700 dark:hover:text-yellow-300">
             Top Imdb
           </li>
-
         </ul>
 
         <div
-            onClick={() => setIsDarkMode((prev: boolean) => !prev)}
-            className="px-3 py-2 mr-4 cursor-pointer"
-          >
-            <Image
-              src={isDarkMode ? assets.sun : assets.moon}
-              alt="moon"
-              className="w-6"
-/>
+          onClick={() => setIsDarkMode((prev: boolean) => !prev)}
+          className="px-3 py-2 mr-4 cursor-pointer"
+        >
+          <Image
+            src={isDarkMode ? assets.sun : assets.moon}
+            alt="moon"
+            className="w-6"
+          />
         </div>
 
-        <div onClick={openMenu} className="px-3 py-2 mr-4  cursor-pointer block md:hidden">
+        <div
+          onClick={openMenu}
+          className="px-3 py-2 mr-4  cursor-pointer block md:hidden"
+        >
           <Image
             src={isDarkMode ? assets.menu_white : assets.menu_black}
             alt=""
