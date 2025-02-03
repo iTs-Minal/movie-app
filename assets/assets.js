@@ -1,4 +1,5 @@
 import movie from "./movie.png"
+import johnwick4 from "./johnwick4.jpg"
 
 import moon from "./moon_icon.png"
 import sun from "./sun_icon.png"
@@ -10,6 +11,7 @@ import menu_white from "./menu-white.png"
 
 export const assets={
 movie,
+johnwick4,
 sun,
 moon,
 close_white,

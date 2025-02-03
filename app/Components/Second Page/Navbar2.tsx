@@ -5,6 +5,7 @@ import React, { useContext } from 'react'
 import { FaUser } from 'react-icons/fa6'
 import { FaSearch } from 'react-icons/fa';
 import { DarkModeContext } from '@/app/themeToggle';
+import Link from 'next/link';
 
 const Navbar2 = () => {
 
@@ -16,10 +17,10 @@ const Navbar2 = () => {
       const { isDarkMode, setIsDarkMode } = darkModeContext;
 
   return (
-    <nav className='flex justify-between w-full  border-b-2 bg-slate-100 py-4 dark:border-darkTheme dark:bg-darkTheme dark:text-white'>
+    <nav className='flex justify-between w-full  border-b-2 bg-slate-100 py-4 dark:border-black dark:bg-darkTheme dark:text-white'>
         <div className='flex flex-row justify-center items-center gap-14'>
             <div className='flex justify-center items-center text-black text-2xl ml-14 cursor-pointer dark:text-white'>
-               <strong>MovieApp</strong> 
+            <Link href="/"><strong>Movie App</strong></Link> 
             </div>
 
             <div className='flex flex-row justify-center items-center gap-2 py-1 px-2 rounded-md bg-slate-700 text-white'>

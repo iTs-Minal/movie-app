@@ -6,13 +6,13 @@ import { DarkModeProvider } from '../themeToggle'
 
 const page = () => {
   return (
-    <>
+    <div className='dark:bg-darkTheme'>
     <DarkModeProvider>
       <Navbar2/>
       <Header2/>
       <MainPage/>
     </DarkModeProvider>
-    </>
+    </div>
   )
 }
 

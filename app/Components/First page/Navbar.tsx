@@ -30,7 +30,7 @@ function Navbar() {
   return (
     <nav className="flex justify-between  border-b-2 bg-slate-100 w-full dark:border-darkTheme dark:bg-darkTheme dark:text-white">
       <div className="flex justify-center items-center text-black text-2xl ml-14 cursor-pointer dark:text-white">
-        <strong>Movie App</strong>
+        <Link href="/"><strong>Movie App</strong></Link>
       </div>
 
       <div className="flex justify-center items-center">
