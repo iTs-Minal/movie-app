@@ -11,7 +11,7 @@ export default {
     extend: {
       colors: {
         lightHover: "#fcf4ff",
-        darkHover: "#2a004a",
+        darkHover: "#232E41",
         darkTheme: "#20232D"
       },
       fontFamily: {

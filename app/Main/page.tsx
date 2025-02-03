@@ -6,7 +6,7 @@ import { DarkModeProvider } from '../themeToggle'
 
 const page = () => {
   return (
-    <div className='dark:bg-darkTheme'>
+    <div className='bg-slate-200 dark:bg-darkTheme'>
     <DarkModeProvider>
       <Navbar2/>
       <Header2/>
