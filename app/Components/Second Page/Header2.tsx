@@ -37,7 +37,7 @@ const Header2 = () => {
 
   const getNowPlayingMovies = () => {
     fetch(
-      `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     )
       .then((res) => res.json())
       .then((json) => {
@@ -130,7 +130,7 @@ const Header2 = () => {
                   {nowPlayingMovies[currentIndex].vote_average?.toFixed(1)}
                 </span>
                 <span className="bg-gray-700 px-2 py-1 rounded">
-                  {nowPlayingMovies[currentIndex].original_language}
+                  {nowPlayingMovies[currentIndex].original_language?.toUpperCase()}
                 </span>
               </div>
               <p className="mt-4 text-sm text-white line-clamp-2 text-left">
@@ -178,13 +178,13 @@ const Header2 = () => {
                   <FaStar className="mr-1" /> {movie.vote_average?.toFixed(1)}
                 </span>
                 <span className="bg-gray-700 px-2 py-1 rounded">
-                  {movie.original_language}
+                  {movie.original_language?.toUpperCase()}
                 </span>
               </div>
-              <h3 className="text-lg font-semibold mt-1">
+              <h3 className="text-[18px] font-semibold mt-1">
                 {movie.title || "Movie Title"}
               </h3>
-              <p className="text-sm text-gray-300 line-clamp-2">
+              <p className="text-[12px] text-gray-300 line-clamp-2">
                 {movie.overview}
               </p>
             </div>

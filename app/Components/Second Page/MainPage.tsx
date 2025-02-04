@@ -3,7 +3,17 @@ import React from 'react'
 const MainPage = () => {
   return (
     <div>
-      MainPage
+      <div>
+        Latest Movies
+      </div>
+
+      <div>
+        Latest Tv shows
+      </div>
+
+      <div>
+        Upcoming
+      </div>
     </div>
   )
 }
