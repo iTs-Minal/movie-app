@@ -8,6 +8,9 @@ import { DarkModeContext } from "@/app/themeToggle";
 import Link from "next/link";
 
 const Navbar2 = () => {
+
+
+  //For side Menu
   const sideMenuRef = useRef<HTMLUListElement | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
