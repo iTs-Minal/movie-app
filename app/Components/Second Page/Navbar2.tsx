@@ -37,8 +37,8 @@ const Navbar2 = () => {
   const { isDarkMode, setIsDarkMode } = darkModeContext;
 
   return (
-    <nav className="flex flex-col md:flex-row justify-between w-full border-b-2 bg-slate-300 py-4 dark:border-black dark:bg-slate-800 dark:text-white">
-      <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-14">
+    <nav className="flex flex-row md:flex-row justify-between w-full border-b-2 bg-slate-300 py-4 dark:border-black dark:bg-slate-800 dark:text-white">
+      <div className="flex flex-row md:flex-row justify-center items-center gap-8 md:gap-14">
         <div className="flex justify-center items-center text-black text-2xl ml-0 md:ml-14 cursor-pointer dark:text-white">
           <Link href="/">
             <strong>Movie App</strong>
@@ -111,12 +111,12 @@ const Navbar2 = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center mt-4 md:mt-0 mr-0 md:mr-10 gap-4 md:gap-10 cursor-pointer">
-        <div onClick={() => setIsDarkMode((prev: boolean) => !prev)}>
+      <div className="flex justify-center items-center mr-10 md:flex md:mt-0 md:mr-10 gap-4 md:gap-10 cursor-pointer">
+        <div onClick={() => setIsDarkMode((prev: boolean) => !prev)} className="flex justify-center items-center">
           <Image
             src={isDarkMode ? assets.sun : assets.moon}
-            alt=""
-            className="w-6"
+            alt="theme toggle"
+            className="w-6 flex justify-center"
           />
         </div>
 

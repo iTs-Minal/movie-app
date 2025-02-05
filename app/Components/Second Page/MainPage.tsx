@@ -142,7 +142,7 @@ const MainPage = () => {
     </div>
 
 
-          
+
 
     </>
   )
