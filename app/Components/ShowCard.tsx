@@ -12,7 +12,7 @@ interface Show {
     original_language?: string;
   }
 
-const MovieCard = ({ name, vote_average, poster_path, overview, original_language }:Show) => {
+const ShowCard = ({ name, vote_average, poster_path, overview, original_language }:Show) => {
   return (
     <motion.div className="relative max-w-[243px] h-[300px] overflow-hidden shadow-lg block my-4 mx-2 bg-white dark:bg-slate-800" whileHover={{ zIndex: 1 }}>
       <motion.img
@@ -45,4 +45,4 @@ const MovieCard = ({ name, vote_average, poster_path, overview, original_languag
   );
 };
 
-export default MovieCard;
+export default ShowCard;

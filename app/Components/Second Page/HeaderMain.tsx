@@ -15,7 +15,7 @@ import {
 // import { assets } from "@/assets/assets";
 import { useEffect, useState } from "react";
 
-const Header2 = () => {
+const HeaderMain = () =>{
   const [currentIndex, setCurrentIndex] = useState(0);
 
   //This is fall back image place holder if the movie image didn't get fetched
@@ -101,8 +101,8 @@ const Header2 = () => {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row mt-8 mx-4 bg-slate-300 dark:bg-gradient-to-b from-gray-800 via-black to-black p-4">
-      <div className="relative w-full md:w-3/4 flex flex-col items-center">
+    <div className="flex flex-col md:flex-row  pt-8 mx-4 bg-slate-300 dark:bg-gradient-to-b from-gray-800 via-black to-black p-4">
+      <div className="relative w-full md:w-3/4 flex flex-col items-center mt-20">
         {/* ---Movie slider section--- */}
 
         <div className="relative w-full max-w-4xl rounded-lg bg-gradient-to-l from-gray-800 via-black to-slate-700 cursor-pointer ">
@@ -155,7 +155,7 @@ const Header2 = () => {
 
       {/* ---Trending Movies Section--- */}
 
-      <div className="w-full md:w-1/3 flex flex-col space-y-6 p-4 cursor-pointer">
+      <div className="w-full md:w-1/3 flex flex-col space-y-6 p-4 cursor-pointer mt-20">
         {trendingMovies.map((movie) => (
           <div
             key={movie.id}
@@ -194,7 +194,7 @@ const Header2 = () => {
 
       {/* ---Social Section--- */}
 
-      <div className="w-full md:w-1/4 flex flex-col space-y-4 p-4 text-white">
+      <div className="w-full md:w-1/4 flex flex-col space-y-4 p-4 text-white mt-20">
         {[
           { icon: FaTwitterSquare, name: "Twitter" },
           { icon: FaInstagramSquare, name: "Instagram" },
@@ -214,4 +214,4 @@ const Header2 = () => {
   );
 };
 
-export default Header2;
+export default HeaderMain;
