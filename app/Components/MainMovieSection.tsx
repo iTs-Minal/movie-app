@@ -2,9 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import { MdLocalMovies, MdTv } from "react-icons/md";
-import ShowCard from "../ShowCard";
-import MovieCard from "../MovieCard"; // Ensure this path is correct and the file exists
+import ShowCard from "./Card/ShowCard";
+import MovieCard from "./Card/MovieCard"; // Ensure this path is correct and the file exists
 import { FaGripLinesVertical } from "react-icons/fa";
+import { RiMovie2AiFill } from "react-icons/ri";
 
 interface Movie {
   id: number;
@@ -29,7 +30,7 @@ interface Show {
 ?:string;
 }
 
-const MainPage = () => {
+const MainMovieSection = () => {
   //For latest movies
 
   const [nowPlayingMovies, setNowPlayingMovies] = useState<Movie[]>([]);
@@ -129,7 +130,7 @@ const MainPage = () => {
       {/* ///-----for latest movies---- */}
 
       <div className="mt-4 mx-4 h-auto rounded-lg 
-                bg-[linear-gradient(to_left,rgba(147,197,253,0.5),rgba(100,116,139,1),rgba(103,232,249,0.5))] 
+                bg-[linear-gradient(to_left,rgba(147,197,253,0.9),rgba(100,116,139,0.5),rgba(103,232,249,0.9))] 
                 dark:bg-[linear-gradient(to_left,rgba(107,114,128,0.7),rgba(71,85,105,1),rgba(31,41,55,0.7))]">
         <div className="flex flex-wrap mt-8">
           <div className="flex justify-center items-center gap-2 ml-4 my-4">
@@ -137,9 +138,9 @@ const MainPage = () => {
             <div className="text-3xl text-semibold font-Ovo text-black dark:text-white">
               <strong>Latest Movies</strong>
             </div>
-            <MdLocalMovies className="text-3xl text-semibold text-black dark:text-white" />{" "}
+            <RiMovie2AiFill className="text-3xl text-semibold text-black dark:text-white" />{" "}
           </div>
-          <div className="flex flex-wrap justify-center">
+          <div className="flex flex-wrap justify-center cursor-pointer">
             {nowPlayingMovies.map((movie) => (
               <MovieCard
                 key={movie.id}
@@ -159,7 +160,7 @@ const MainPage = () => {
       {/* //----For latest tv shows----- */}
 
       <div className="mt-4 mx-4 h-auto rounded-lg 
-                bg-[linear-gradient(to_right,#93C5FD,#64748B,#67E8F9)] 
+                bg-[linear-gradient(to_right,rgba(147,197,253,0.9),rgba(100,116,139,0.5),rgba(103,232,249,0.9))] 
                 dark:bg-[linear-gradient(to_right,#6B7280,#475569,#1F2937)]">
         <div className="flex flex-wrap mt-8">
           <div className="flex items-center gap-4 ml-4 my-4">
@@ -169,7 +170,7 @@ const MainPage = () => {
             </div>
             <MdTv className="text-3xl text-semibold text-black dark:text-white" />{" "}
           </div>
-          <div className="flex flex-wrap justify-center">
+          <div className="flex flex-wrap justify-center cursor-pointer">
             {nowPlayingShows.map((show) => (
               <ShowCard
                 key={show.id}
@@ -191,7 +192,7 @@ const MainPage = () => {
 
       {/* ----Upcoming Movies---- */}
       <div className="mt-4 mx-4 h-auto rounded-lg 
-                bg-[linear-gradient(to_left,rgba(147,197,253,0.5),rgba(100,116,139,1),rgba(103,232,249,0.5))] 
+                bg-[linear-gradient(to_bottom,rgba(147,197,253,0.3),rgba(100,116,139,1),rgba(103,232,249,0.6))] 
                 dark:bg-[linear-gradient(to_left,rgba(107,114,128,0.7),rgba(71,85,105,1),rgba(31,41,55,0.7))]">
         <div className="flex flex-wrap mt-8">
           <div className="flex justify-center items-center gap-2 ml-4 my-4">
@@ -201,7 +202,7 @@ const MainPage = () => {
             </div>
             <MdLocalMovies className="text-3xl text-semibold text-black dark:text-white" />{" "}
           </div>
-          <div className="flex flex-wrap justify-center">
+          <div className="flex flex-wrap justify-center cursor-pointer">
             {upcomingMovies.map((movie) => (
               <MovieCard
                 key={movie.id}
@@ -223,4 +224,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default MainMovieSection;

@@ -14,9 +14,9 @@ import {
 
 // import { assets } from "@/assets/assets";
 import { useEffect, useState } from "react";
-import NavbarMain from "./NavbarMain";
+import NavbarMain from "./MainNavbar";
 
-const HeaderMain = () =>{
+const MainHeader = () =>{
   const [currentIndex, setCurrentIndex] = useState(0);
 
   //This is fall back image place holder if the movie image didn't get fetched
@@ -104,8 +104,8 @@ const HeaderMain = () =>{
   return (
     <>
     <NavbarMain/>
-    <div className="flex flex-col md:flex-row  p-4 mx-4 mt-4
-bg-[linear-gradient(to_top,rgba(147,197,253,1),rgba(100,116,139,1),rgba(103,232,249,0.2))] 
+    <div id="header" className="flex flex-col md:flex-row  p-4 mx-4 mt-4
+bg-[linear-gradient(to_top,rgba(147,197,253,1),rgba(100,116,139,0.2),rgba(103,232,249,0.4))] 
                 dark:bg-[linear-gradient(to_top,rgba(107,114,128,0.7),rgba(71,85,105,1),rgba(31,41,55,0.7))]">
       <div className="relative w-full md:w-full flex flex-col items-center">
         {/* ---Movie slider section--- */}
@@ -164,7 +164,7 @@ bg-[linear-gradient(to_top,rgba(147,197,253,1),rgba(100,116,139,1),rgba(103,232,
         {trendingMovies.map((movie) => (
           <div
             key={movie.id}
-            className="flex bg-[linear-gradient(to_right,#6B7280,#475569,#1F2937)] p-3 rounded-lg shadow-md hover:bg-[linear-gradient(to_left,#6B7280,#475569,#1F2937)] hover:scale-105 transition duration-100"
+            className="flex p-3 rounded-lg shadow-md bg-[linear-gradient(to_right,rgba(147,197,253,1),rgba(100,116,139,0),rgba(103,232,249,0.8))] hover:bg-[linear-gradient(to_left,rgba(147,197,253,1),rgba(100,116,139,0),rgba(103,232,249,0.8))] dark:bg-[linear-gradient(to_right,#6B7280,#475569,#1F2937)]  dark:hover:bg-[linear-gradient(to_left,#6B7280,#475569,#1F2937)] hover:scale-105 transition duration-100"
           >
             <Image
               className="w-20 h-24 object-cover rounded"
@@ -177,19 +177,19 @@ bg-[linear-gradient(to_top,rgba(147,197,253,1),rgba(100,116,139,1),rgba(103,232,
               width={80}
               height={120}
             />
-            <div className="ml-4 text-white">
+            <div className="ml-4 text-black dark:text-white">
               <div className="flex items-center space-x-2">
                 <span className="text-yellow-400 flex items-center">
                   <FaStar className="mr-1" /> {movie.vote_average?.toFixed(1)}
                 </span>
-                <span className="bg-gray-700 px-2 py-1 rounded">
+                <span className="bg-gray-700 px-2 py-1 rounded text-white">
                   {movie.original_language?.toUpperCase()}
                 </span>
               </div>
-              <h3 className="text-[18px] font-semibold mt-1">
+              <h3 className="text-[18px] font-semibold mt-1 line-clamp-1">
                 {movie.title || "Movie Title"}
               </h3>
-              <p className="text-[12px] text-gray-300 line-clamp-2">
+              <p className="text-[13px] text-gray-900 dark:text-white line-clamp-2">
                 {movie.overview}
               </p>
             </div>
@@ -199,7 +199,7 @@ bg-[linear-gradient(to_top,rgba(147,197,253,1),rgba(100,116,139,1),rgba(103,232,
 
       {/* ---Social Section--- */}
 
-      <div className="w-full md:w-[10%] flex flex-col  items-center space-y-4 p-4 text-black dark:text-white">
+      <div className="w-full md:w-[10%] flex flex-row  justify-center  md:flex-col md:items-center gap-6 p-4 text-black dark:text-white">
         {[
           { icon: FaTwitterSquare, name: "Twitter" },
           { icon: FaInstagramSquare, name: "Instagram" },
@@ -208,7 +208,7 @@ bg-[linear-gradient(to_top,rgba(147,197,253,1),rgba(100,116,139,1),rgba(103,232,
         ].map((social, index) => (
           <button
             key={index}
-            className="flex items-center space-x-2 p-2 rounded"
+            className="flex items-center flex-row  p-2 rounded"
           >
             <social.icon className="text-4xl hover:scale-110 transition duration-500" />
           </button>
@@ -219,4 +219,4 @@ bg-[linear-gradient(to_top,rgba(147,197,253,1),rgba(100,116,139,1),rgba(103,232,
   );
 };
 
-export default HeaderMain;
+export default MainHeader;

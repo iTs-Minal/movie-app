@@ -2,11 +2,11 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React, { useContext, useRef } from "react";
-import { DarkModeContext } from "../../themeToggle";
+import { DarkModeContext } from "../ThemeToggle/themeToggle";
 import Link from "next/link";
 import { GoDotFill } from "react-icons/go";
 
-function Navbar() {
+function HomeNavbar() {
   const darkModeContext = useContext(DarkModeContext);
   if (!darkModeContext) {
     throw new Error("DarkModeContext is undefined");
@@ -29,11 +29,17 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex justify-between  border-b-2 bg-gray-500/20 w-full dark:border-darkTheme dark:bg-darkTheme dark:text-white">
+    <nav className="flex justify-between  border-b-2 w-full
+    bg-[linear-gradient(to_top,rgba(147,197,253,0.7),rgba(103,232,249,0.5))]  
+     dark:border-darkTheme dark:bg-[linear-gradient(to_bottom,rgba(107,114,128,0.5),rgba(71,85,105,0.9),rgba(31,41,55,0.8))]
+      dark:text-white">
       <div className="flex justify-center items-center text-black text-2xl ml-14 cursor-pointer dark:text-white">
-        <Link href="/"><strong>Movie App</strong></Link><span className="flex">
-                      <GoDotFill className="text-red-400" />
-                    </span>
+        <Link href="/">
+          <strong>Movie App</strong>
+        </Link>
+        <span className="flex">
+          <GoDotFill className="text-red-400" />
+        </span>
       </div>
 
       <div className="flex justify-center items-center">
@@ -122,4 +128,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default HomeNavbar;

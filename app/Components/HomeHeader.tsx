@@ -1,24 +1,24 @@
 import Image from "next/image";
 import React from "react";
-import { assets } from "../../../assets/assets";
+import { assets } from "../../assets/assets";
 import { FaSearch } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
 // import {motion} from "framer-motion"
 
-function Header() {
+function HomeHeader() {
   return (
-      <div className="flex flex-col justify-center items-center w-full bg-slate-400/70 dark:bg-slate-800">
-        <div className=" flex flex-col items-center justify-center mt-10">
-          <Image src={assets.movie} alt="" className="w-60" />
-          <h1 className="text-4xl text-black text-semibold mt-2 p-2 mb-2 dark:text-white">
-            <strong>Movie App.com</strong>
-          </h1>
-        </div>
+    <div className="flex flex-col justify-center items-center w-full bg-[linear-gradient(to_top,rgba(147,197,253,1),rgba(100,116,139,0.5),rgba(103,232,249,0.5))] dark:bg-[linear-gradient(to_top,rgba(107,114,128,0.7),rgba(71,85,105,1),rgba(31,41,55,0.7))]">
+      <div className=" flex flex-col items-center justify-center mt-10">
+        <Image src={assets.movie} alt="" className="w-60" />
+        <h1 className="text-4xl text-black text-semibold mt-2 p-2 mb-2 dark:text-white">
+          <strong>Movie App.com</strong>
+        </h1>
+      </div>
 
-        <div className="w-full flex items-center justify-center py-3 mt-3">
-          <form className="flex justify-center">
-            <input 
+      <div className="w-full flex items-center justify-center py-3 mt-3">
+        <form className="flex justify-center">
+          <input
             id="first-input"
             type="text"
             className="md:w-[750px] focus:outline-none placeholder:text-black/90  border-gray-500 py-[10] border-r-0 px-4 focus:placeholder-hidden "
@@ -27,18 +27,16 @@ function Header() {
           <button className="w-15 h-15 px-4 py-[15] bg-slate-500 border-l-0">
             <FaSearch className="text-semibold" />
           </button>
-          </form>
-          
-        </div>
+        </form>
+      </div>
 
-          <Link href="/Main">
-          <button className="flex flex-row items-center gap-4 border  text-2xl border-gray-500 px-10 py-3 mt-5 rounded-full hover:scale-105 transition duration-300 hover:bg-lightHover dark:text-white dark:hover:text-black">
+      <Link href="/Main">
+        <button className="flex flex-row items-center gap-4 border  text-2xl border-gray-500 px-10 py-3 mt-5 rounded-full hover:scale-105 transition duration-300 hover:bg-lightHover dark:text-white dark:hover:text-black">
           Visit full site <FaArrowRight />
         </button>
-        </Link>
+      </Link>
 
-
-        <div className="flex mx-14 mt-10 flex-col dark:text-white">
+      <div className="flex mx-14 mt-10 flex-col dark:text-white">
         <div className="mb-10">
           <h3 className="mb-2 font-Outfit font-semibold">
             Watch Movies Online Free
@@ -132,10 +130,8 @@ function Header() {
           </p>
         </div>
       </div>
-
-
-      </div>
+    </div>
   );
 }
 
-export default Header;
+export default HomeHeader;

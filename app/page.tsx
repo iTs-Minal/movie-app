@@ -1,7 +1,10 @@
 // import { useState } from "react";
-import Header from "./Components/First page/Header";
-import Navbar from "./Components/First page/Navbar";
-import { DarkModeProvider } from "./themeToggle";
+import Footer from "./Components/Footer";
+import HomeHeader from "./Components/HomeHeader";
+
+import HomeNavbar from "./Components/HomeNavbar";
+
+import { DarkModeProvider } from "./ThemeToggle/themeToggle";
 
 
 export default function Home() {
@@ -9,8 +12,9 @@ export default function Home() {
   return (
    <>
    <DarkModeProvider>
-   <Navbar/>
-   <Header/>
+   <HomeNavbar/>
+   <HomeHeader/>
+   <Footer/>
    </DarkModeProvider>
    </>
   );
