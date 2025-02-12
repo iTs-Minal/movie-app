@@ -52,8 +52,8 @@ const NavbarMain = () => {
   }, []);
 
   return (
-    <nav className={`flex  fixed top-0 w-full z-50 justify-between  py-3.5 border-b bg-[linear-gradient(to_top,rgba(147,197,253,0.2),rgba(103,232,249,0.1))] 
-                dark:bg-[linear-gradient(to_bottom,rgba(107,114,128,0.4),rgba(71,85,105,0.1),rgba(31,41,55,0.2))] ${ isScroll
+    <nav className={`flex sticky top-0 left-0 h-20 w-full z-50 justify-between  py-3.5 bg-[linear-gradient(to_top,rgba(147,197,253,0.7),rgba(103,232,249,0.5))] 
+                dark:bg-[linear-gradient(to_bottom,rgba(107,114,128,0.7),rgba(71,85,105,0.4),rgba(31,41,55,0.8))] ${ isScroll
       ? "bg-[linear-gradient(to_top,rgba(147,197,253,0.2),rgba(103,232,249,0.1))] bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-slate-800/50  dark:shadow-white/20"
       : ""}`}>
       <div className="flex justify-between items-center ml-4">
@@ -77,30 +77,30 @@ const NavbarMain = () => {
             className=" flex flex-col items-center justify-center relative top-20 p-2 gap-6"
           >
            
-            <li
+        <Link href="/Movie"><li
               onClick={closeMenu}
               className="px-3 py-2 cursor-pointer hover:bg-darkHover/50 hover:rounded-3xl hover:text-yellow-400 dark:hover:text-yellow-300"
             >
-              Movies
-            </li>
-            <li
+              Movie
+            </li></Link>
+            <Link href="/Tvshows"><li
               onClick={closeMenu}
               className="px-3 py-2 cursor-pointer hover:bg-darkHover/50 hover:rounded-3xl hover:text-yellow-400 dark:hover:text-yellow-300"
             >
               Tv Shows
-            </li>
-            <li
+            </li></Link>
+            <Link href="/Upcoming"> <li
               onClick={closeMenu}
               className="px-3 py-2 cursor-pointer hover:bg-darkHover/50 hover:rounded-3xl hover:text-yellow-400 dark:hover:text-yellow-300"
             >
               Upcoming
-            </li>
-            <li
+            </li></Link>
+            <Link href="/TopImDb"><li
               onClick={closeMenu}
               className="px-3 py-2 cursor-pointer hover:bg-darkHover/50 hover:rounded-3xl hover:text-yellow-400 dark:hover:text-yellow-300"
             >
               Top ImDB
-            </li>
+            </li></Link>
           </ul>
           </div>
          

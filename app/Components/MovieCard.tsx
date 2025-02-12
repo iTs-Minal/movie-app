@@ -10,6 +10,7 @@ interface Movie {
   poster_path?: string;
   overview?: string;
   original_language?: string;
+  release_date?:string,
 }
 
 const MovieCard = ({
@@ -18,6 +19,7 @@ const MovieCard = ({
   poster_path,
   overview,
   original_language,
+  release_date,
 }: Movie) => {
   return (
     <motion.div
@@ -52,15 +54,19 @@ const MovieCard = ({
       >
         <h3 className="text-2xl font-Kanit font-bold">{title}</h3>
         <p className="text-sm mt-1">
-          <span className="font-bold">Language: </span>
+          <span className="font-bold text-cyan-400">Language: </span>
           {original_language?.toUpperCase()}
+        </p>
+        <p className="text-sm mt-1">
+          <span className="font-bold text-aquamarine">Date: </span>
+          {release_date}
         </p>
         <p className="text-sm mt-1 flex items-center">
           <FaStar className="text-yellow-400 mr-1" />
           {vote_average?.toFixed(1)}
         </p>
         <p className="text-sm mt-1 line-clamp-3">
-          <span className="font-bold">Overview: </span>
+          <span className="font-bold text-orange-600">Overview: </span>
           {overview}
         </p>
       </motion.div>

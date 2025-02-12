@@ -14,6 +14,7 @@ import {
 
 // import { assets } from "@/assets/assets";
 import { useEffect, useState } from "react";
+import NavbarMain from "./NavbarMain";
 
 const HeaderMain = () =>{
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,7 +38,7 @@ const HeaderMain = () =>{
 
   const getNowPlayingMovies = () => {
     fetch(
-      `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     )
       .then((res) => res.json())
       .then((json) => {
@@ -77,7 +78,7 @@ const HeaderMain = () =>{
 
   const getTrendingMovies = () => {
     fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+      `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     )
       .then((res) => res.json())
       .then((json) => {
@@ -101,24 +102,26 @@ const HeaderMain = () =>{
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row  pt-8 mx-4 p-4 
-bg-[linear-gradient(to_top,rgba(147,197,253,0.9),rgba(100,116,139,1),rgba(103,232,249,0.4))] 
+    <>
+    <NavbarMain/>
+    <div className="flex flex-col md:flex-row  p-4 mx-4 mt-4
+bg-[linear-gradient(to_top,rgba(147,197,253,1),rgba(100,116,139,1),rgba(103,232,249,0.2))] 
                 dark:bg-[linear-gradient(to_top,rgba(107,114,128,0.7),rgba(71,85,105,1),rgba(31,41,55,0.7))]">
-      <div className="relative w-full md:w-3/4 flex flex-col items-center mt-20">
+      <div className="relative w-full md:w-full flex flex-col items-center">
         {/* ---Movie slider section--- */}
 
-        <div className="relative w-full max-w-4xl rounded-lg bg-[linear-gradient(to_bottom,rgba(107,114,128,0.8),rgba(71,85,105,1),rgba(31,41,55,0.7))] cursor-pointer ">
+        <div className="relative w-full max-w-4xl h-full rounded-lg bg-[linear-gradient(to_bottom,rgba(107,114,128,0.8),rgba(71,85,105,1),rgba(31,41,55,0.7))] cursor-pointer ">
           {nowPlayingMovies.length > 0 && (
             <Image
-              className="w-full h-[500px] max-w-4xl object-contain mx-auto rounded-lg shadow-lg"
+              className="w-full h-[500px] aspect-square max-w-4xl object-contain mx-auto rounded-lg shadow-lg"
               src={
                 nowPlayingMovies[currentIndex]?.poster_path?.includes("http")
                   ? nowPlayingMovies[currentIndex].poster_path
                   : `https://image.tmdb.org/t/p/w500${nowPlayingMovies[currentIndex]?.poster_path}`
               }
               alt={nowPlayingMovies[currentIndex].title || "Movie title"}
-              width={300}
-              height={450}
+              width={500}
+              height={100}
             />
           )}
           {nowPlayingMovies.length > 0 && (
@@ -157,7 +160,7 @@ bg-[linear-gradient(to_top,rgba(147,197,253,0.9),rgba(100,116,139,1),rgba(103,23
 
       {/* ---Trending Movies Section--- */}
 
-      <div className="w-full md:w-1/3 flex flex-col space-y-6 p-4 cursor-pointer mt-20">
+      <div className="w-full md:w-[40%] flex flex-col space-y-6 p-4 cursor-pointer">
         {trendingMovies.map((movie) => (
           <div
             key={movie.id}
@@ -196,7 +199,7 @@ bg-[linear-gradient(to_top,rgba(147,197,253,0.9),rgba(100,116,139,1),rgba(103,23
 
       {/* ---Social Section--- */}
 
-      <div className="w-full md:w-1/4 flex flex-col space-y-4 p-4 text-white mt-20">
+      <div className="w-full md:w-[10%] flex flex-col  items-center space-y-4 p-4 text-black dark:text-white">
         {[
           { icon: FaTwitterSquare, name: "Twitter" },
           { icon: FaInstagramSquare, name: "Instagram" },
@@ -205,14 +208,14 @@ bg-[linear-gradient(to_top,rgba(147,197,253,0.9),rgba(100,116,139,1),rgba(103,23
         ].map((social, index) => (
           <button
             key={index}
-            className="flex items-center space-x-2 bg-gray-900 p-2 rounded hover:bg-darkHover"
+            className="flex items-center space-x-2 p-2 rounded"
           >
-            <social.icon className="text-xl" />
-            <span>{social.name}</span>
+            <social.icon className="text-4xl hover:scale-110 transition duration-500" />
           </button>
         ))}
       </div>
     </div>
+    </>
   );
 };
 

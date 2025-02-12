@@ -1,14 +1,13 @@
 import HeaderMain from '@/app/Components/Second Page/HeaderMain'
 import MainPage from '@/app/Components/Second Page/MainPage'
 import React from 'react'
-import NavbarMain from '../Components/Second Page/NavbarMain'
+// import NavbarMain from '../Components/Second Page/NavbarMain'
 import { DarkModeProvider } from '../themeToggle'
 
 const page = () => {
   return (
-    <div className='bg-slate-200 dark:bg-darkTheme'>
+    <div className='bg-slate-300/40 dark:bg-darkTheme/70'>
     <DarkModeProvider>
-      <NavbarMain/>
       <HeaderMain/>
       <MainPage/>
     </DarkModeProvider>

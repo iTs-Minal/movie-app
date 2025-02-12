@@ -10,9 +10,12 @@ interface Show {
     poster_path?: string;
     overview?: string;
     original_language?: string;
+    first_air_date
+    ?:string,
   }
 
-const ShowCard = ({ name, vote_average, poster_path, overview, original_language }:Show) => {
+const ShowCard = ({ name, vote_average, poster_path, overview, original_language,first_air_date
+}:Show) => {
   return (
     <motion.div 
           className="relative w-[244px] h-96 overflow-hidden shadow-lg my-4 mx-2 bg-white dark:bg-slate-800 rounded-lg"
@@ -49,6 +52,11 @@ const ShowCard = ({ name, vote_average, poster_path, overview, original_language
               <span className="font-bold">Language: </span>
               {original_language?.toUpperCase()}
             </p>
+            <p className="text-sm mt-1">
+          <span className="font-bold text-aquamarine">Date: </span>
+          {first_air_date
+          }
+        </p>
             <p className="text-sm mt-1 flex items-center">
               <FaStar className="text-yellow-400 mr-1" />
               {vote_average?.toFixed(1)}
