@@ -52,8 +52,9 @@ const NavbarMain = () => {
   }, []);
 
   return (
-    <nav className={`flex dark:bg-darkHover fixed top-0 w-full z-50 justify-between bg-slate-300 py-3.5 border-b dark:border-gray-900 ${ isScroll
-      ? "bg-white bg-opacity-30 backdrop-blur-lg shadow-sm dark:bg-slate-800/30  dark:shadow-white/20"
+    <nav className={`flex  fixed top-0 w-full z-50 justify-between  py-3.5 border-b bg-[linear-gradient(to_top,rgba(147,197,253,0.2),rgba(103,232,249,0.1))] 
+                dark:bg-[linear-gradient(to_bottom,rgba(107,114,128,0.4),rgba(71,85,105,0.1),rgba(31,41,55,0.2))] ${ isScroll
+      ? "bg-[linear-gradient(to_top,rgba(147,197,253,0.2),rgba(103,232,249,0.1))] bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-slate-800/50  dark:shadow-white/20"
       : ""}`}>
       <div className="flex justify-between items-center ml-4">
         <div className="flex justify-center items-center gap-4 dark:text-white">
@@ -62,8 +63,9 @@ const NavbarMain = () => {
               <SlMenu size={20} />
             </span>
           </div>
+
           {isOpen && (
-          <div className="flex flex-col fixed  items-center px-3 py-4 bg-slate-300 left-0 top-0 bottom-0 w-64 z-50 h-screen  transition duration-500 dark:bg-darkTheme dark:text-white">
+          <div className="flex flex-col fixed  items-center px-3 py-4 bg-slate-300 left-0 top-0 bottom-0 w-64 z-50 h-screen  transition duration-1000 dark:bg-darkTheme dark:text-white">
             <div
               onClick={closeMenu}
               className="p-1 cursor-pointer absolute right-6 top-6 dark:hover:rounded-full dark:hover:bg-slate-900/70 dark:hover:text-white"
@@ -104,7 +106,6 @@ const NavbarMain = () => {
          
         )}
 
-
           <div className="flex justify-center items-baseline font-Kanit text-2xl">
           <Link href="/">
             <strong>Movie App</strong>
@@ -116,8 +117,8 @@ const NavbarMain = () => {
         </div>
 
         <div className="left-10 relative">
-          <form className="flex justify-center  items-center ml-20 gap-2 bg-slate-400 rounded-full">
-            <input type="text" className="w-[550px] px-4 p-2 rounded-full rounded-r-none font-Outfit bg-white/90 focus:outline-none dark:bg-slate-700 dark:text-white dark:placeholder:text-white/90" placeholder="Enter keywords..." />
+          <form className={`flex justify-center  items-center ml-20 gap-2 bg-slate-400 rounded-full ${isScroll?"hidden":""}`}>
+            <input type="text" className="w-[550px] px-4 p-2 rounded-full rounded-r-none font-Outfit bg-white/90 focus:outline-none dark:bg-slate-700/70 dark:text-white dark:placeholder:text-white/90" placeholder="Enter keywords..." />
             <button className="px-4">
               <span>
                 <RiSearch2Line size={20} />

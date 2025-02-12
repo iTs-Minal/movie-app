@@ -8,7 +8,7 @@ import Link from "next/link";
 
 function Header() {
   return (
-      <div className="flex flex-col justify-center items-center w-full bg-slate-200 dark:bg-slate-800">
+      <div className="flex flex-col justify-center items-center w-full bg-slate-400/70 dark:bg-slate-800">
         <div className=" flex flex-col items-center justify-center mt-10">
           <Image src={assets.movie} alt="" className="w-60" />
           <h1 className="text-4xl text-black text-semibold mt-2 p-2 mb-2 dark:text-white">
@@ -17,16 +17,18 @@ function Header() {
         </div>
 
         <div className="w-full flex items-center justify-center py-3 mt-3">
-          <input
+          <form className="flex justify-center">
+            <input 
             id="first-input"
             type="text"
-            className="md:w-[750px] rounded-md focus:outline-none 
- border border-gray-500 py-[10] px-4 focus:placeholder-hidden "
+            className="md:w-[750px] focus:outline-none placeholder:text-black/90  border-gray-500 py-[10] border-r-0 px-4 focus:placeholder-hidden "
             placeholder="Enter Keywords..."
           />
-          <button className="w-15 h-15 px-4 py-[15] rounded-md bg-slate-500">
+          <button className="w-15 h-15 px-4 py-[15] bg-slate-500 border-l-0">
             <FaSearch className="text-semibold" />
           </button>
+          </form>
+          
         </div>
 
           <Link href="/Main">

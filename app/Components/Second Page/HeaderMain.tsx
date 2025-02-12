@@ -101,11 +101,13 @@ const HeaderMain = () =>{
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row  pt-8 mx-4 bg-slate-300 dark:bg-gradient-to-b from-gray-800 via-black to-black p-4">
+    <div className="flex flex-col md:flex-row  pt-8 mx-4 p-4 
+bg-[linear-gradient(to_top,rgba(147,197,253,0.9),rgba(100,116,139,1),rgba(103,232,249,0.4))] 
+                dark:bg-[linear-gradient(to_top,rgba(107,114,128,0.7),rgba(71,85,105,1),rgba(31,41,55,0.7))]">
       <div className="relative w-full md:w-3/4 flex flex-col items-center mt-20">
         {/* ---Movie slider section--- */}
 
-        <div className="relative w-full max-w-4xl rounded-lg bg-gradient-to-l from-gray-800 via-black to-slate-700 cursor-pointer ">
+        <div className="relative w-full max-w-4xl rounded-lg bg-[linear-gradient(to_bottom,rgba(107,114,128,0.8),rgba(71,85,105,1),rgba(31,41,55,0.7))] cursor-pointer ">
           {nowPlayingMovies.length > 0 && (
             <Image
               className="w-full h-[500px] max-w-4xl object-contain mx-auto rounded-lg shadow-lg"
@@ -159,7 +161,7 @@ const HeaderMain = () =>{
         {trendingMovies.map((movie) => (
           <div
             key={movie.id}
-            className="flex bg-gray-900 p-3 rounded-lg shadow-md hover:bg-darkHover hover:scale-105 transition duration-100"
+            className="flex bg-[linear-gradient(to_right,#6B7280,#475569,#1F2937)] p-3 rounded-lg shadow-md hover:bg-[linear-gradient(to_left,#6B7280,#475569,#1F2937)] hover:scale-105 transition duration-100"
           >
             <Image
               className="w-20 h-24 object-cover rounded"

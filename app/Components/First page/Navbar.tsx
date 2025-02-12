@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useContext, useRef } from "react";
 import { DarkModeContext } from "../../themeToggle";
 import Link from "next/link";
+import { GoDotFill } from "react-icons/go";
 
 function Navbar() {
   const darkModeContext = useContext(DarkModeContext);
@@ -28,25 +29,27 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex justify-between  border-b-2 bg-slate-100 w-full dark:border-darkTheme dark:bg-darkTheme dark:text-white">
+    <nav className="flex justify-between  border-b-2 bg-gray-500/20 w-full dark:border-darkTheme dark:bg-darkTheme dark:text-white">
       <div className="flex justify-center items-center text-black text-2xl ml-14 cursor-pointer dark:text-white">
-        <Link href="/"><strong>Movie App</strong></Link>
+        <Link href="/"><strong>Movie App</strong></Link><span className="flex">
+                      <GoDotFill className="text-red-400" />
+                    </span>
       </div>
 
       <div className="flex justify-center items-center">
         <ul className="hidden justify-around  md:flex  px-3 py-4 gap-7 mr-10 ">
           <Link href="/Main">
-            <li className="px-3 py-2 cursor-pointer hover:text-gray-700 dark:hover:text-yellow-300">
+            <li className="px-3 py-2 cursor-pointer hover:text-amber-950 dark:hover:text-yellow-300">
               Home
             </li>
           </Link>
-          <li className="px-3 py-2 cursor-pointer hover:text-gray-700 dark:hover:text-yellow-300">
+          <li className="px-3 py-2 cursor-pointer hover:text-amber-950 dark:hover:text-yellow-300">
             Movies
           </li>
-          <li className="px-3 py-2 cursor-pointer hover:text-gray-700 dark:hover:text-yellow-300">
+          <li className="px-3 py-2 cursor-pointer hover:text-amber-950 dark:hover:text-yellow-300">
             Tv Shows
           </li>
-          <li className="px-3 py-2 cursor-pointer hover:text-gray-700 dark:hover:text-yellow-300">
+          <li className="px-3 py-2 cursor-pointer hover:text-amber-950 dark:hover:text-yellow-300">
             Top Imdb
           </li>
         </ul>

@@ -33,7 +33,7 @@ const MainPage = () => {
 
   const getNowPlayingMovies = () => {
     fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     )
       .then((res) => res.json())
       .then((json) => {
@@ -62,7 +62,7 @@ const MainPage = () => {
 
   const getNowPlayingShows = () => {
     fetch(
-      `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+      `https://api.themoviedb.org/3/trending/tv/day?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     )
       .then((res) => res.json())
       .then((json) => {
@@ -90,7 +90,9 @@ const MainPage = () => {
     <>
       {/* ///-----for latest movies---- */}
 
-      <div className="mt-4 mx-4 h-auto bg-slate-400 dark:bg-slate-900 ">
+      <div className="mt-4 mx-4 h-auto rounded-lg 
+                bg-[linear-gradient(to_left,rgba(147,197,253,0.5),rgba(100,116,139,1),rgba(103,232,249,0.5))] 
+                dark:bg-[linear-gradient(to_left,rgba(107,114,128,0.7),rgba(71,85,105,1),rgba(31,41,55,0.7))]">
         <div className="flex flex-wrap mt-8">
           <div className="flex justify-center items-center gap-2 ml-4 my-4">
             <FaGripLinesVertical className="text-3xl text-semibold text-yellow-500" />
@@ -117,7 +119,9 @@ const MainPage = () => {
 
       {/* //----For latest tv shows----- */}
 
-      <div className="mt-4 mx-4 h-auto bg-slate-400 dark:bg-slate-900 ">
+      <div className="mt-4 mx-4 h-auto rounded-lg 
+                bg-[linear-gradient(to_right,#93C5FD,#64748B,#67E8F9)] 
+                dark:bg-[linear-gradient(to_right,#6B7280,#475569,#1F2937)]">
         <div className="flex flex-wrap mt-8">
           <div className="flex items-center gap-4 ml-4 my-4">
             <FaGripLinesVertical className="text-3xl text-semibold text-yellow-500" />{" "}
