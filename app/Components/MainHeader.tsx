@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa";
 
 // import { assets } from "@/assets/assets";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import NavbarMain from "./MainNavbar";
 
 const MainHeader = () =>{
@@ -36,7 +36,7 @@ const MainHeader = () =>{
 
   const [nowPlayingMovies, setNowPlayingMovies] = useState<Movie[]>([]);
 
-  const getNowPlayingMovies = () => {
+  const getNowPlayingMovies = useCallback(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     )
@@ -55,7 +55,7 @@ const MainHeader = () =>{
       .catch((error) =>
         console.error("Error fetching now-playing movies:", error)
       );
-  };
+  }, []);
 
   useEffect(() => {
     getNowPlayingMovies();
